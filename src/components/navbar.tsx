@@ -20,11 +20,14 @@ const Navbar = async () => {
           <Button variant="default">Sign In</Button>
         </Link>
       ) : (
+        <div className="flex items-center gap-8">
+        <p className="font-bold">Hi, {session?.user?.name}!</p>
         <form action={handleSignOut}>
           <Button variant="default" type="submit">
             Sign Out
           </Button>
         </form>
+        </div>
       )}
     </nav>
   );

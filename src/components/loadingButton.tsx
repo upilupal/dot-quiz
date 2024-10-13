@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 
-const LoadingButton = ({ pending }: { pending: boolean }) => {
+const LoadingButton = ({ pending, children }: { pending: boolean, children: React.ReactNode }) => {
   return (
     <Button className="w-full" type="submit" disabled={pending}>
       {pending ? (
@@ -27,7 +27,7 @@ const LoadingButton = ({ pending }: { pending: boolean }) => {
           </svg>
         </div>
       ) : (
-        "Sign in"
+        children
       )}
     </Button>
   );
