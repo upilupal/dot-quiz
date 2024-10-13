@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
@@ -16,6 +16,7 @@ import { handleCredentialsSignin} from "@/app/actions/authActions";
 import { useState } from "react";
 import ErrorMessage from "@/components/errorMessage";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Login() {
   const [globalError, setGlobalError] = useState<string>("");
@@ -77,10 +78,19 @@ export default function Login() {
               />
 
               {/* Submit button will go here */}
-              <LoadingButton pending={form.formState.isSubmitting} />
+              <LoadingButton pending={form.formState.isSubmitting}>Sign In</LoadingButton>
             </form>
           </Form>
         </CardContent>
+        <CardFooter className="flex justify-center">
+        <p className="text-slate-400">
+              Don't have an account?{" "}
+              <Link href={"/register"} className="underline hover:opacity-75 transition">
+                Register
+              </Link>{" "}
+              here
+            </p>
+        </CardFooter>
       </Card>
     </div>
   );
