@@ -10,7 +10,7 @@ const Navbar = async () => {
   const session = await auth();
   console.log({ session });
   return (
-    <nav className="flex justify-between items-center py-3 px-4 bg-white shadow-md h-16 fixed top-0 left-0 right-0">
+    <nav className="flex justify-between items-center py-3 px-4 h-16 fixed top-0 left-0 right-0">
       <Link href={"/"} className="text-xl font-bold">
         DotQuizz
       </Link>
